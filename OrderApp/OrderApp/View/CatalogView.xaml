@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="OrderApp.View.CatalogView" Title="Catálogo" >
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+            <ListView
+                        x:Name="lvCatalog" 
+                        ItemsSource="{Binding Products}"
+                        HasUnevenRows="true"
+                        RowHeight="110"
+                        >
+                        
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                 <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout Padding="5" VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                                            <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                                                <StackLayout Orientation="Vertical" >
+                                                    <Image WidthRequest="80" 
+                                                           HeightRequest="80" 
+                                                           Aspect="AspectFit"
+                                                           >
+                                                        <Image.Source>
+		                                                <UriImageSource
+                                                            Uri="{Binding photo}" 
+			                                                CacheValidity="14" 
+			                                                CachingEnabled="true"/>
+	                                                    </Image.Source>
+                                                    </Image>
+                                                </StackLayout>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Vertical">
+                                                <StackLayout Orientation="Vertical">
+                                                    <Label
+                                                        FontSize="Micro"
+                                                        LineBreakMode="WordWrap"
+                                                        Text="{Binding name}"
+                                                        TextColor="Black" />
+                                                    <Label
+                                                        FontSize="Micro"
+                                                        LineBreakMode="WordWrap"
+                                                        Text="{Binding price}"
+                                                        TextColor="Black" />
+                                                </StackLayout>
+                                            </StackLayout>
+                                            <StackLayout MinimumWidthRequest="80" Orientation="Vertical" HorizontalOptions="End">
+                                                <StackLayout Orientation="Vertical" HorizontalOptions="End">
+                                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                                                        <Image WidthRequest="10" 
+                                                           HeightRequest="10" 
+                                                           Aspect="AspectFit"
+                                                           Source="star.png"
+                                                           >
+                                                    </Image>
+                                                    </StackLayout>
+                                                    <StackLayout HorizontalOptions="Center">
+                                                        <Label
+                                                        LineBreakMode="WordWrap"
+                                                        Text="99 UN"
+                                                        TextColor="Black" />
+                                                    </StackLayout>
+                                                    <StackLayout Spacing="1" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                                        <Label HorizontalTextAlignment="Center" WidthRequest="30" BackgroundColor="#9B9B9B" FontSize="Large" Text="-" TextColor="White"></Label>
+                                                        <Label HorizontalTextAlignment="Center" WidthRequest="30" BackgroundColor="#4A4A4A" FontSize="Large" TextColor="#FFFF8C" Text="+"></Label>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <StackLayout Padding="10" BackgroundColor="#212121" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                            <Button HeightRequest="40" BackgroundColor="#FFFF8C" Text="Comprar > R$ 2.906,88"></Button>
+                        </StackLayout>       
+                     </StackLayout>
+        </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

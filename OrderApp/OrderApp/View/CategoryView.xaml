@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="OrderApp.View.CategoryView">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="0,0,0,0" VerticalOptions="FillAndExpand">
+                <ListView
+                    CachingStrategy="RecycleElement"
+                    ItemsSource="{Binding Categorys}"
+                    Footer="">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout Padding="20,20,20,20" Orientation="Horizontal">
+                                        <StackLayout Orientation="Vertical">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label
+                                                    Font="Bold,16"
+                                                    LineBreakMode="TailTruncation"
+                                                    Text="{Binding name}"
+                                                    TextColor="Black" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
